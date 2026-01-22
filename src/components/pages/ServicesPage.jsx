@@ -77,7 +77,7 @@ export default function ServicesPage() {
   // CTA: Redirect to WhatsApp with a pre-filled message
   const handleWhatsAppQuote = (serviceTitle) => {
     const message = encodeURIComponent(
-      `Hi Skellify Team! I'm interested in your "${serviceTitle}" service. Could you provide more details and a formal quote?`
+      `Hi Skellify! I'm interested in the "${serviceTitle}" service. I'd love to share what I'm working on and see how we can collaborate. Can we talk?`
     );
     window.open(`${WHATSAPP_LINK}?text=${message}`, "_blank");
   };

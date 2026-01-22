@@ -60,9 +60,9 @@ const Footer = () => {
               Support
             </h4>
             <div className="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
-              <a href="mailto:skellify.official@gmail.com" className="flex items-center gap-3 hover:text-primary transition-colors group">
+              <a href="mailto:official.skellify@gmail.com" className="flex items-center gap-3 hover:text-primary transition-colors group">
                 <Mail className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" /> 
-                skellify.official@gmail.com
+                official.skellify@gmail.com
               </a>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-green-600 transition-colors group">
                 <Phone className="w-4 h-4 text-green-500 group-hover:scale-110 transition-transform" /> 

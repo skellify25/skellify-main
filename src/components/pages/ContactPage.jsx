@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { Mail, Phone, MessageSquare, Calendar, ExternalLink } from "lucide-react";
 import { WHATSAPP_LINK, CALENDAR_LINK } from "@/constants/contact";
 
-const GOOGLE_FORM_CONTACT_URL = "https://forms.gle/your-contact-form-link";
+const GOOGLE_FORM_CONTACT_URL = "https://forms.gle/ebK5fyUViaEftNzQ6";
 
 export default function ContactPage() {
   return (
@@ -28,7 +28,7 @@ export default function ContactPage() {
           <Mail className="text-blue-600" />
           <div>
             <p className="font-medium">Email</p>
-            <p className="text-slate-600 dark:text-slate-400">skellify.official@gmail.com</p>
+            <p className="text-slate-600 dark:text-slate-400">official.skellify@gmail.com</p>
           </div>
         </div>
         <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-6 flex items-center gap-4 bg-white dark:bg-slate-800">

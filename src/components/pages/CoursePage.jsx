@@ -15,7 +15,7 @@ const COURSES = [
     certificate: true,
     price: "9,999",
     offerPrice: "4,999",
-    formUrl: "https://forms.gle/FOUNDATION_FORM_ID",
+    formUrl: "https://forms.gle/QqaVEwuUPh5eLFp19",
     highlights: [
       "Frontend: HTML, CSS & JavaScript",
       "Python Programming & OOPs Logic",
@@ -36,7 +36,7 @@ const COURSES = [
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/PYTHON_FORM_ID",
+    formUrl: "https://forms.gle/HEZnryu37EWhXdQK6",
     highlights: [
       "Python Syntax & Data Types",
       "Advanced OOPs: Classes & Objects",
@@ -57,7 +57,7 @@ const COURSES = [
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/JAVA_FORM_ID",
+    formUrl: "https://forms.gle/Vrk2K7EGqjZ9RyHW8",
     highlights: [
       "JVM, JRE & JDK Architecture",
       "Inheritance, Polymorphism & Interfaces",
@@ -78,7 +78,7 @@ const COURSES = [
     certificate: true,
     price: "15,999",
     offerPrice: "9,999",
-    formUrl: "https://forms.gle/SDET_FORM_ID",
+    formUrl: "https://forms.gle/N7G18ivcsdLXcxNs5",
     highlights: [
       "Hybrid & Data-Driven Frameworks",
       "Rest Assured API Automation",

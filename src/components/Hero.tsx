@@ -5,6 +5,7 @@ import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import MarqueeBadge from "./marquee-badge";
 import { heroSpecialisationList } from "@/constants/uiconfig";
+import { CALENDAR_LINK } from "@/constants/contact";
 
 const Hero = () => {
   return (
@@ -63,7 +64,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
-              href="#contact"
+              href={CALENDAR_LINK}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               className="px-3 py-[6px] w-full sm:w-fit bg-emerald-500/20 border border-emerald-400 dark:bg-emerald-500/70 text-black dark:text-white text-base font-medium rounded-xl shadow-lg hover:bg-emerald-500/50 dark:hover:bg-emerald-500/50 transition-all flex items-center justify-center gap-2"
