@@ -209,6 +209,7 @@ export default function CoursePage() {
 
             <button
               onClick={() => handleApplyNow(course.formUrl)} 
+              target="_blank"
               className="mt-8 group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-lg shadow-blue-200 dark:shadow-none"
             >
               Apply Now
