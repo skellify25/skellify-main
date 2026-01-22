@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Clock, Award, Layers, Video, IndianRupee, ExternalLink } from "lucide-react";
+import { Clock, Award, Layers, Video, IndianRupee, ExternalLink, CalendarDays } from "lucide-react"; // Added CalendarDays icon
 
 // 1. Static Course Data with unique Form URLs
 const COURSES = [
@@ -93,7 +93,6 @@ const COURSES = [
 
 export default function CoursePage() {
   
-  // Accept the unique URL as a parameter
   const handleApplyNow = (url) => {
     if (url) {
       window.open(url, "_blank");
@@ -103,7 +102,37 @@ export default function CoursePage() {
   };
 
   return (
-    <section className="py-24 container mx-auto px-6">
+    <section className="py-12 md:py-24 container mx-auto px-6">
+      
+      {/* --- NEW BATCH ANNOUNCEMENT BANNER --- */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="mb-12 p-1 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-600 shadow-xl"
+      >
+        <div className="bg-white dark:bg-slate-900 rounded-[14px] p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
+              <CalendarDays className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                New Batch Starting Soon!
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">
+                Enrollment is now open for all programs starting <span className="font-semibold text-blue-600 dark:text-blue-400">16 March 2026</span>.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+             <span className="hidden md:block text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full animate-pulse">
+                Limited Seats
+             </span>
+          </div>
+        </div>
+      </motion.div>
+      {/* --- END BANNER --- */}
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -130,7 +159,7 @@ export default function CoursePage() {
           >
             <div>
               <h2 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">{course.title}</h2>
-              <p className="text-slate-600 dark:text-slate-400 mb-5 text-sm leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 mb-5 text-sm leading-relaxed line-clamp-2">
                 {course.description}
               </p>
 
@@ -179,7 +208,7 @@ export default function CoursePage() {
             </div>
 
             <button
-              onClick={() => handleApplyNow(course.formUrl)} // Passing the specific URL here
+              onClick={() => handleApplyNow(course.formUrl)} 
               className="mt-8 group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-lg shadow-blue-200 dark:shadow-none"
             >
               Apply Now
