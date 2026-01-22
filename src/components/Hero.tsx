@@ -39,7 +39,7 @@ const Hero = () => {
           >
             <span className="px-2 py-1 sm:px-4 sm:py-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-500 text-[12px] sm:text-xs font-semibold tracking-wide uppercase flex items-center gap-2">
               <span className="relative h-2 w-2 rounded-full bg-emerald-500 after:absolute after:inset-0 after:animate-ping after:rounded-full after:bg-emerald-500 after:opacity-75 after:content-['']" />
-              <span>Accepting Clients</span>
+              <span>Admissions Open & Taking Projects</span>
             </span>
           </motion.div>
 

@@ -28,7 +28,7 @@ export default function ContactPage() {
           <Mail className="text-blue-600" />
           <div>
             <p className="font-medium">Email</p>
-            <p className="text-slate-600 dark:text-slate-400">skellify25@gmail.com</p>
+            <p className="text-slate-600 dark:text-slate-400">skellify.official@gmail.com</p>
           </div>
         </div>
         <div className="border border-slate-200 dark:border-slate-700 rounded-xl p-6 flex items-center gap-4 bg-white dark:bg-slate-800">
