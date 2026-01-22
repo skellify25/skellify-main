@@ -1,0 +1,193 @@
+"use client";
+
+import { motion } from "motion/react";
+import { Clock, Award, Layers, Video, IndianRupee, ExternalLink } from "lucide-react";
+
+// 1. Static Course Data with unique Form URLs
+const COURSES = [
+  {
+    id: "foundation-skill",
+    title: "Foundation Skill Development Course",
+    description: "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
+    duration: "7 Months",
+    level: "Class 9th - Graduation",
+    mode: "Live Classes",
+    certificate: true,
+    price: "9,999",
+    offerPrice: "4,999",
+    formUrl: "https://forms.gle/FOUNDATION_FORM_ID",
+    highlights: [
+      "Frontend: HTML, CSS & JavaScript",
+      "Python Programming & OOPs Logic",
+      "UI Automation with Selenium",
+      "API Testing Basics (Postman)",
+      "Portfolio Website Development",
+      "Logical Problem Solving",
+      "Introduction to Git & GitHub"
+    ]
+  },
+  {
+    id: "python-oops",
+    title: "Python Programming with OOPs",
+    description: "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
+    duration: "3 Months",
+    level: "Class 9th - Graduation",
+    mode: "Live Classes",
+    certificate: true,
+    price: "5,999",
+    offerPrice: "2,999",
+    formUrl: "https://forms.gle/PYTHON_FORM_ID",
+    highlights: [
+      "Python Syntax & Data Types",
+      "Advanced OOPs: Classes & Objects",
+      "Exception Handling & Debugging",
+      "File I/O & Data Management",
+      "Library Management System Project",
+      "Functional Programming Basics",
+      "Scripting for Daily Tasks"
+    ]
+  },
+  {
+    id: "java-oops",
+    title: "Java Programming with OOPs",
+    description: "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
+    duration: "3 Months",
+    level: "Class 9th - Graduation",
+    mode: "Live Classes",
+    certificate: true,
+    price: "5,999",
+    offerPrice: "2,999",
+    formUrl: "https://forms.gle/JAVA_FORM_ID",
+    highlights: [
+      "JVM, JRE & JDK Architecture",
+      "Inheritance, Polymorphism & Interfaces",
+      "Java Collections Framework (List, Set, Map)",
+      "Multithreading & Stream API",
+      "Memory Management Basics",
+      "Abstract Classes & Encapsulation",
+      "Building a Console-based Application"
+    ]
+  },
+  {
+    id: "sdet-program",
+    title: "SDET (Software Development Engineer in Test)",
+    description: "Advanced 9-month program for graduates to become job-ready automation engineers.",
+    duration: "9 Months",
+    level: "Graduation & Above",
+    mode: "Live Classes",
+    certificate: true,
+    price: "15,999",
+    offerPrice: "9,999",
+    formUrl: "https://forms.gle/SDET_FORM_ID",
+    highlights: [
+      "Hybrid & Data-Driven Frameworks",
+      "Rest Assured API Automation",
+      "CI/CD Integration with Jenkins",
+      "Cucumber BDD & Gherkin Scripting",
+      "Agile Methodology & Jira Tracking",
+      "Mock Interviews & Resume Optimization",
+      "Database Testing with SQL"
+    ]
+  }
+];
+
+export default function CoursePage() {
+  
+  // Accept the unique URL as a parameter
+  const handleApplyNow = (url) => {
+    if (url) {
+      window.open(url, "_blank");
+    } else {
+      console.error("Form URL not provided for this course.");
+    }
+  };
+
+  return (
+    <section className="py-24 container mx-auto px-6">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-3xl mb-16"
+      >
+        <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-white">Our Courses</h1>
+        <p className="text-slate-600 dark:text-slate-400 text-lg">
+          Explore our carefully designed programs at <strong>Skellify</strong> to build your career in technology.
+        </p>
+      </motion.div>
+
+      {/* Course Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {COURSES.map((course, index) => (
+          <motion.div
+            key={course.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ y: -6 }}
+            className="border border-slate-200 dark:border-slate-700 rounded-2xl p-8 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <h2 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">{course.title}</h2>
+              <p className="text-slate-600 dark:text-slate-400 mb-5 text-sm leading-relaxed">
+                {course.description}
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 text-sm mb-6 text-slate-700 dark:text-slate-300">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-blue-600" />
+                  {course.duration}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-blue-600" />
+                  {course.level}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-blue-600" />
+                  {course.certificate ? "Certificate Inc." : "No Certificate"}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Video className="w-4 h-4 text-blue-600" />
+                  {course.mode}
+                </div>
+              </div>
+
+              {/* Pricing */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-sm text-slate-400 line-through flex items-center gap-1">
+                  <IndianRupee className="w-3 h-3" />
+                  {course.price}
+                </span>
+                <span className="text-2xl font-bold text-blue-600 flex items-center gap-1">
+                  <IndianRupee className="w-5 h-5" />
+                  {course.offerPrice}
+                </span>
+              </div>
+
+              <div className="space-y-2 mb-2">
+                <p className="font-semibold text-xs uppercase tracking-wider text-slate-500">Key Highlights</p>
+                <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                  {course.highlights.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-blue-500">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <button
+              onClick={() => handleApplyNow(course.formUrl)} // Passing the specific URL here
+              className="mt-8 group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-lg shadow-blue-200 dark:shadow-none"
+            >
+              Apply Now
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
