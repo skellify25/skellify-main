@@ -15,7 +15,7 @@ const COURSES = [
     certificate: true,
     price: "9,999",
     offerPrice: "4,999",
-    formUrl: "https://forms.gle/QqaVEwuUPh5eLFp19",
+    formUrl: "https://forms.gle/xV14cyGDGHyjR9tB6",
     highlights: [
       "Frontend: HTML, CSS & JavaScript",
       "Python Programming & OOPs Logic",
