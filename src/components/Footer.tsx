@@ -88,9 +88,9 @@ const Footer = () => {
               {/* <Link href="#" className="p-2.5 bg-blue-500/10 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all shadow-sm" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </Link> */}
-              <Link href={INSTAGRAM_LINK} className="p-2.5 bg-pink-500/10 text-pink-600 rounded-lg hover:bg-pink-500 hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              {/* <Link href={INSTAGRAM_LINK} className="p-2.5 bg-pink-500/10 text-pink-600 rounded-lg hover:bg-pink-500 hover:text-white transition-all shadow-sm" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 

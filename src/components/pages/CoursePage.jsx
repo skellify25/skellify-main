@@ -10,16 +10,13 @@ import {
   ExternalLink,
   CalendarDays,
   MessageCircle,
-  Info,
 } from "lucide-react";
 
-// 1. Static Course Data with updated highlights
 const COURSES = [
   {
     id: "foundation-skill",
     title: "Foundation Skill Development Course",
-    description:
-      "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
+    description: "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
     duration: "7 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -40,8 +37,7 @@ const COURSES = [
   {
     id: "python-oops",
     title: "Python Programming with OOPs",
-    description:
-      "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
+    description: "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
     duration: "3 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -62,8 +58,7 @@ const COURSES = [
   {
     id: "java-oops",
     title: "Java Programming with OOPs",
-    description:
-      "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
+    description: "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
     duration: "3 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -84,8 +79,7 @@ const COURSES = [
   {
     id: "sdet-program",
     title: "SDET (Software Development Engineer in Test)",
-    description:
-      "Advanced 9-month program for graduates to become job-ready automation engineers.",
+    description: "Advanced 9-month program for graduates to become job-ready automation engineers.",
     duration: "9 Months",
     level: "Graduation & Above",
     mode: "Live Classes (Online)",
@@ -94,14 +88,14 @@ const COURSES = [
     offerPrice: "9,999",
     formUrl: "https://forms.gle/N7G18ivcsdLXcxNs5",
     highlights: [
-    "Core & Advanced Java with Gradle",
-    "Selenium WebDriver & TestNG Integration",
-    "Rest Assured API Automation",
-    "CI/CD Pipeline Integration with Jenkins",
-    "Agile Testing & Jira Ticket Management",
-    "Database Testing with SQL",
-    "Mock Interviews & Resume Optimization"
-  ],
+      "Core & Advanced Java with Gradle",
+      "Selenium WebDriver & TestNG Integration",
+      "Rest Assured API Automation",
+      "CI/CD Pipeline Integration with Jenkins",
+      "Agile Testing & Jira Ticket Management",
+      "Database Testing with SQL",
+      "Mock Interviews & Resume Optimization"
+    ],
   },
 ];
 
@@ -115,54 +109,57 @@ export default function CoursePage() {
   };
 
   return (
-    <section className="py-12 md:py-24 container mx-auto px-6">
-      {/* --- NEW BATCH ANNOUNCEMENT BANNER --- */}
+    /* Increased pt-28 to clear the Navbar on mobile, pt-32 on desktop */
+    <section className="pt-28 pb-12 md:pt-32 md:pb-24 container mx-auto px-4 md:px-6">
+      
+      {/* --- RESPONSIVE BATCH ANNOUNCEMENT BANNER --- */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-16 overflow-hidden rounded-3xl bg-slate-50 dark:bg-slate-900 border border-blue-200 dark:border-blue-900 shadow-2xl"
+        className="mb-12 md:mb-16 overflow-hidden rounded-2xl md:rounded-3xl bg-slate-50 dark:bg-slate-900 border border-blue-200 dark:border-blue-900 shadow-xl"
       >
         <div className="flex flex-col lg:flex-row">
-          {/* Left Side: Date */}
-          <div className="bg-blue-600 p-8 flex flex-col items-center justify-center text-white text-center min-w-[240px]">
-            <CalendarDays className="w-10 h-10 mb-2 opacity-80" />
-            <p className="text-sm font-bold uppercase tracking-widest opacity-90">
-              Next Batch Starts
-            </p>
-            <h3 className="text-3xl font-black mt-1">06 APRIL</h3>
-            <p className="text-lg font-medium opacity-90">2026</p>
+          {/* Left Side: Date - Stacks on mobile, Row on Tablet/LG */}
+          <div className="bg-blue-600 p-6 md:p-8 flex lg:flex-col items-center justify-center text-white text-center lg:min-w-[240px] gap-4 lg:gap-2">
+            <CalendarDays className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
+            <div>
+              <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-90">
+                Next Batch Starts
+              </p>
+              <h3 className="text-2xl md:text-3xl font-black mt-1 uppercase">06 April</h3>
+              <p className="text-base md:text-lg font-medium opacity-90">2026</p>
+            </div>
           </div>
 
           {/* Right Side: Instructions */}
-          <div className="p-6 md:p-8 flex-1 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="p-6 md:p-10 flex-1 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 dark:text-emerald-400 font-bold uppercase text-2xl tracking-tighter">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 dark:text-emerald-400 font-bold uppercase text-lg md:text-2xl tracking-tighter">
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
                 No Instant Payment Required
               </div>
-              <h4 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+              <h4 className="text-lg md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                 Secure your spot today with zero upfront cost.
               </h4>
-              <p className="text-slate-600 dark:text-slate-400 text-sm max-w-xl">
+              <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-xl">
                 Just fill out the application form to receive your invite to the{" "}
                 <span className="font-bold text-slate-900 dark:text-white underline decoration-blue-500 underline-offset-4 tracking-tight">
                   Skellify WhatsApp Group
                 </span>
-                . Full schedule, meeting links, and payment details will be
-                shared directly there.
+                . Full schedule and meeting links will be shared there.
               </p>
             </div>
 
-            {/* Quick Icon Group */}
-            <div className="hidden xl:flex items-center gap-4">
+            {/* Quick Action Button */}
+            <div className="flex items-center justify-center w-full md:w-auto">
               <a
                 href="https://chat.whatsapp.com/Fi19RL9SBtF4jWklMqsqsh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 px-4 py-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-emerald-200 dark:hover:border-emerald-900 cursor-pointer active:scale-95 group"
+                className="flex items-center md:flex-col gap-3 md:gap-2 px-6 py-4 md:px-4 md:py-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-200 hover:border-emerald-200 dark:hover:border-emerald-900 cursor-pointer active:scale-95 group w-full md:w-auto justify-center"
               >
                 <MessageCircle className="w-6 h-6 text-emerald-500 group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] font-bold text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                <span className="text-xs md:text-[10px] font-bold text-slate-500 md:text-slate-400 group-hover:text-emerald-600">
                   JOIN GROUP
                 </span>
               </a>
@@ -170,25 +167,24 @@ export default function CoursePage() {
           </div>
         </div>
       </motion.div>
-      {/* --- END BANNER --- */}
 
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl mb-16"
+        className="max-w-3xl mb-12 md:mb-16 text-center md:text-left"
       >
-        <h1 className="text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-900 dark:text-white">
           Our Courses
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
           Industry-vetted programs at <strong>Skellify</strong>. Gain hands-on
           OJT experience while mastering modern technology.
         </p>
       </motion.div>
 
       {/* Course Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         {COURSES.map((course, index) => (
           <motion.div
             key={course.id}
@@ -196,8 +192,7 @@ export default function CoursePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -6 }}
-            className="border border-slate-200 dark:border-slate-700 rounded-3xl p-8 bg-white dark:bg-slate-800 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+            className="border border-slate-200 dark:border-slate-700 rounded-3xl p-6 md:p-8 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -205,39 +200,39 @@ export default function CoursePage() {
                   {course.id === "sdet-program" ? "Job Ready" : "Skill Up"}
                 </span>
               </div>
-              <h2 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-white leading-tight">
                 {course.title}
               </h2>
               <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
                 {course.description}
               </p>
 
-              <div className="grid grid-cols-2 gap-4 text-xs mb-8 text-slate-700 dark:text-slate-300">
+              <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-[11px] md:text-xs mb-8 text-slate-700 dark:text-slate-300">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-blue-600" />
+                  <Clock className="w-4 h-4 text-blue-600 shrink-0" />
                   {course.duration}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-blue-600" />
-                  {course.level}
+                  <Layers className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span className="truncate">{course.level}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-blue-600" />
+                  <Award className="w-4 h-4 text-blue-600 shrink-0" />
                   Certificate
                 </div>
                 <div className="flex items-center gap-2">
-                  <Video className="w-4 h-4 text-blue-600" />
-                  {course.mode}
+                  <Video className="w-4 h-4 text-blue-600 shrink-0" />
+                  Live Online
                 </div>
               </div>
 
               {/* Pricing */}
               <div className="flex items-center gap-3 mb-8 bg-slate-50 dark:bg-slate-900/50 p-4 rounded-2xl">
-                <span className="text-xs text-slate-400 line-through flex items-center gap-0.5">
+                <span className="text-xs text-slate-400 line-through flex items-center">
                   <IndianRupee className="w-3 h-3" />
                   {course.price}
                 </span>
-                <span className="text-2xl font-black text-blue-600 flex items-center gap-0.5">
+                <span className="text-xl md:text-2xl font-black text-blue-600 flex items-center">
                   <IndianRupee className="w-5 h-5" />
                   {course.offerPrice}
                 </span>
@@ -246,15 +241,15 @@ export default function CoursePage() {
                 </span>
               </div>
 
-              <div className="space-y-3 mb-2">
+              <div className="space-y-3">
                 <p className="font-bold text-[10px] uppercase tracking-widest text-slate-400">
                   What you will learn
                 </p>
                 <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2.5">
                   {course.highlights.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 group">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0 group-hover:scale-150 transition-transform" />
-                      {item}
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
+                      <span className="leading-tight">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -263,10 +258,10 @@ export default function CoursePage() {
 
             <button
               onClick={() => handleApplyNow(course.formUrl)}
-              className="mt-10 group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-xl shadow-blue-200 dark:shadow-none active:scale-95"
+              className="mt-10 group flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all cursor-pointer shadow-lg shadow-blue-200 dark:shadow-none active:scale-95 w-full"
             >
               Enroll Now
-              <ExternalLink className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
+              <ExternalLink className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
         ))}
