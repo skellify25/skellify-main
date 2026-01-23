@@ -16,7 +16,8 @@ const COURSES = [
   {
     id: "foundation-skill",
     title: "Foundation Skill Development Course",
-    description: "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
+    description:
+      "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
     duration: "7 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -37,7 +38,8 @@ const COURSES = [
   {
     id: "python-oops",
     title: "Python Programming with OOPs",
-    description: "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
+    description:
+      "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
     duration: "3 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -58,7 +60,8 @@ const COURSES = [
   {
     id: "java-oops",
     title: "Java Programming with OOPs",
-    description: "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
+    description:
+      "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
     duration: "3 Months",
     level: "Class 9th - Graduation",
     mode: "Live Classes (Online)",
@@ -67,19 +70,20 @@ const COURSES = [
     offerPrice: "2,999",
     formUrl: "https://forms.gle/Vrk2K7EGqjZ9RyHW8",
     highlights: [
-      "JVM, JRE & JDK Architecture",
-      "Inheritance, Polymorphism & Interfaces",
-      "Java Collections Framework (List, Set, Map)",
-      "Multithreading & Stream API",
-      "Memory Management Basics",
-      "Abstract Classes & Encapsulation",
-      "Building a Console-based Application",
+      "Installing Java & Writing Your First Program",
+      "Syntax, Variables & Data Types",
+      "Conditional Statements & Loops",
+      "Understanding OOP Concepts (Class, Object, Inheritance)",
+      "Methods, Constructors & Access Modifiers",
+      "Arrays & Introduction to Collections",
+      "Exception Handling",
     ],
   },
   {
     id: "sdet-program",
     title: "SDET (Software Development Engineer in Test)",
-    description: "Advanced 9-month program for graduates to become job-ready automation engineers.",
+    description:
+      "Advanced 9-month program for graduates to become job-ready automation engineers.",
     duration: "9 Months",
     level: "Graduation & Above",
     mode: "Live Classes (Online)",
@@ -94,7 +98,7 @@ const COURSES = [
       "CI/CD Pipeline Integration with Jenkins",
       "Agile Testing & Jira Ticket Management",
       "Database Testing with SQL",
-      "Mock Interviews & Resume Optimization"
+      "Mock Interviews & Resume Optimization",
     ],
   },
 ];
@@ -108,10 +112,52 @@ export default function CoursePage() {
     }
   };
 
+  // --- DYNAMIC JSON-LD GENERATION ---
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Skellify IT Training Courses",
+    description:
+      "Professional IT training and OJT programs including SDET, Python, and Java.",
+    itemListElement: COURSES.map((course, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Course",
+        name: course.title,
+        description: course.description,
+        provider: {
+          "@type": "Organization",
+          name: "Skellify",
+          sameAs: "https://www.skellify.com",
+        },
+        offers: {
+          "@type": "Offer",
+          price: course.offerPrice.replace(",", ""),
+          priceCurrency: "INR",
+          category: "Paid",
+        },
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "Online",
+          courseWorkload: `P${course.duration.replace(" ", "")}`, // ISO 8601 Duration format
+          instructor: {
+            "@type": "Person",
+            name: "Industry Experts",
+          },
+        },
+      },
+    })),
+  };
+
   return (
-    /* Increased pt-28 to clear the Navbar on mobile, pt-32 on desktop */
     <section className="pt-28 pb-12 md:pt-32 md:pb-24 container mx-auto px-4 md:px-6">
-      
+      {/* Injecting the JSON-LD Script for Search Engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* --- RESPONSIVE BATCH ANNOUNCEMENT BANNER --- */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -119,19 +165,21 @@ export default function CoursePage() {
         className="mb-12 md:mb-16 overflow-hidden rounded-2xl md:rounded-3xl bg-slate-50 dark:bg-slate-900 border border-blue-200 dark:border-blue-900 shadow-xl"
       >
         <div className="flex flex-col lg:flex-row">
-          {/* Left Side: Date - Stacks on mobile, Row on Tablet/LG */}
           <div className="bg-blue-600 p-6 md:p-8 flex lg:flex-col items-center justify-center text-white text-center lg:min-w-[240px] gap-4 lg:gap-2">
             <CalendarDays className="w-8 h-8 md:w-10 md:h-10 opacity-80" />
             <div>
               <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest opacity-90">
                 Next Batch Starts
               </p>
-              <h3 className="text-2xl md:text-3xl font-black mt-1 uppercase">06 April</h3>
-              <p className="text-base md:text-lg font-medium opacity-90">2026</p>
+              <h3 className="text-2xl md:text-3xl font-black mt-1 uppercase">
+                06 April
+              </h3>
+              <p className="text-base md:text-lg font-medium opacity-90">
+                2026
+              </p>
             </div>
           </div>
 
-          {/* Right Side: Instructions */}
           <div className="p-6 md:p-10 flex-1 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 dark:text-emerald-400 font-bold uppercase text-lg md:text-2xl tracking-tighter">
@@ -150,7 +198,6 @@ export default function CoursePage() {
               </p>
             </div>
 
-            {/* Quick Action Button */}
             <div className="flex items-center justify-center w-full md:w-auto">
               <a
                 href="https://chat.whatsapp.com/Fi19RL9SBtF4jWklMqsqsh"
@@ -188,6 +235,7 @@ export default function CoursePage() {
         {COURSES.map((course, index) => (
           <motion.div
             key={course.id}
+            id={course.id} // Added ID for anchor linking from sitemap
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
