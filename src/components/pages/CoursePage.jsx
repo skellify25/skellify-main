@@ -19,7 +19,7 @@ const COURSES = [
     description:
       "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
     duration: "7 Months",
-    level: "Class 9th - Graduation",
+    level: "Class 9th & Above",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "9,999",
@@ -41,7 +41,7 @@ const COURSES = [
     description:
       "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
     duration: "3 Months",
-    level: "Class 9th - Graduation",
+    level: "Class 9th & Above",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "5,999",
@@ -63,7 +63,7 @@ const COURSES = [
     description:
       "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
     duration: "3 Months",
-    level: "Class 9th - Graduation",
+    level: "Class 9th & Above",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "5,999",
@@ -172,7 +172,7 @@ export default function CoursePage() {
                 Next Batch Starts
               </p>
               <h3 className="text-2xl md:text-3xl font-black mt-1 uppercase">
-                06 April
+                16 March
               </h3>
               <p className="text-base md:text-lg font-medium opacity-90">
                 2026
