@@ -172,7 +172,7 @@ export default function CoursePage() {
                 Next Batch Starts
               </p>
               <h3 className="text-2xl md:text-3xl font-black mt-1 uppercase">
-                16 March
+                06 April
               </h3>
               <p className="text-base md:text-lg font-medium opacity-90">
                 2026
