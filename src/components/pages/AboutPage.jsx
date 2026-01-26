@@ -1,11 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Target, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { 
+  GraduationCap, 
+  Briefcase, 
+  Target, 
+  Sparkles, 
+  CheckCircle2, 
+  ArrowRight, 
+  MapPin, 
+  Globe2, 
+  Layers, 
+  Cpu, 
+  Zap,
+  Users, 
+  ShieldCheck 
+} from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_LINK, CALENDAR_LINK } from "@/constants/contact";
 
 export default function AboutPage() {
+
+  const workflow = [
+    { title: "Analyze", desc: "Understanding industry gaps and business needs.", icon: Target },
+    { title: "Architect", desc: "Designing scalable technical frameworks.", icon: Layers },
+    { title: "Execute", desc: "Building products with real-world precision.", icon: Cpu },
+    { title: "Empower", desc: "Mentoring talent through the build process.", icon: Zap },
+  ];
+
   return (
     <section className="py-24 container mx-auto px-6">
       {/* Hero Section */}
@@ -14,49 +36,60 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-4xl mb-20"
       >
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
-          Where Learning Meets <span className="text-blue-600">Innovation</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-6">
+          <Sparkles className="w-4 h-4" /> Empowering Innovation
+        </div>
+        <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-slate-900 dark:text-white">
+          Bridging the Gap Between <span className="text-blue-600">Education & Industry</span>
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed">
-          Skellify is a technology-driven ecosystem. We don't just teach technology; we build it. 
-          By bridging the gap between academic learning and industry execution, we empower the next 
-          generation of developers while delivering world-class digital solutions to businesses.
+        <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed max-w-3xl">
+          Skellify is a dual-purpose technology ecosystem headquartered in Ranchi. We specialize in developing 
+          enterprise-grade digital solutions while simultaneously cultivating the next generation of 
+          technical talent through hands-on, industry-integrated learning.
         </p>
       </motion.div>
 
-      {/* Core Pillars (Mission/Vision) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="group border border-slate-200 dark:border-slate-700 rounded-3xl p-10 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300"
-        >
-          <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-            <Target className="w-8 h-8 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-            To democratize high-end technical expertise. We provide students with the "On-Job" 
-            experience they lack and provide businesses with the "Technical Precision" they need to scale.
-          </p>
-        </motion.div>
+      {/* Our Approach */}
+      <div className="mb-32">
+        <h2 className="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-white">The Skellify Approach</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {workflow.map((item, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition-colors"
+            >
+              <item.icon className="w-8 h-8 text-blue-600 mb-6" />
+              <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">{item.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="group border border-slate-200 dark:border-slate-700 rounded-3xl p-10 bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300"
-        >
-          <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-            <Sparkles className="w-8 h-8 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-            To be the global benchmark for "Applied Technology"—a place where a student's first 
-            line of code contributes to a real-world business solution.
+      {/* Mission & Vision */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+        <div className="p-10 rounded-[2rem] bg-slate-900 text-white">
+          <Target className="w-10 h-10 text-blue-400 mb-6" />
+          <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+          <p className="text-slate-300 leading-relaxed text-lg">
+            To bridge the gap between classroom theory and industry reality. We aim to deliver 
+            software solutions that drive business growth while fostering a learning environment 
+            centered on building, not just studying.
           </p>
-        </motion.div>
+        </div>
+
+        <div className="p-10 rounded-[2rem] border-2 border-slate-100 dark:border-slate-800 dark:bg-slate-900/30">
+          <GraduationCap className="w-10 h-10 text-blue-600 mb-6" />
+          <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Our Vision</h2>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+            To establish Ranchi as a hub for technical excellence, where local talent produces 
+            global-scale digital products through an "Applied Technology" ecosystem.
+          </p>
+        </div>
       </div>
 
       {/* The Skellify Advantage */}
