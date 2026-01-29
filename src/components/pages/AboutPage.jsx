@@ -8,16 +8,11 @@ import {
   Sparkles, 
   CheckCircle2, 
   ArrowRight, 
-  MapPin, 
-  Globe2, 
   Layers, 
   Cpu, 
   Zap,
-  Users, 
-  ShieldCheck 
 } from "lucide-react";
 import Link from "next/link";
-import { WHATSAPP_LINK, CALENDAR_LINK } from "@/constants/contact";
 
 export default function AboutPage() {
 
