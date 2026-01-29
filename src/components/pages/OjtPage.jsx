@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion"; // Changed from motion/react for standard compatibility
+import { motion } from "framer-motion"; 
 import { Clock, Award, Layers, Video, IndianRupee, ExternalLink } from "lucide-react";
 
 const OJT_PROGRAMS = [
