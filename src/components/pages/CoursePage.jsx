@@ -6,8 +6,11 @@ import {
   Clock,
   Award,
   Video,
+  CalendarDays,
+  MessageCircle,
   IndianRupee,
   ExternalLink,
+  ShieldCheck,
 } from "lucide-react";
 
 /* -------------------- COURSE DATA -------------------- */
@@ -95,6 +98,71 @@ export default function CoursePage() {
 
   return (
     <section className="pt-28 pb-20 container mx-auto px-4 md:px-6">
+
+      {/* --- NEW BATCH ANNOUNCEMENT BANNER ---  */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mb-16 overflow-hidden rounded-3xl bg-slate-50 dark:bg-slate-900 border border-blue-200 dark:border-blue-900 shadow-2xl"
+      >
+        <div className="flex flex-col lg:flex-row">
+          {/* Left Side: Date */}
+          <div className="bg-blue-600 p-8 flex flex-col items-center justify-center text-white text-center min-w-[260px]">
+            <CalendarDays className="w-10 h-10 mb-2 opacity-80" />
+            <p className="text-sm font-bold uppercase tracking-widest opacity-90">
+              Next Batch Starts On
+            </p>
+            <h3 className="text-3xl font-black mt-1">06 APRIL</h3>
+            <p className="text-lg font-medium opacity-90">2026</p>
+          </div>
+
+          {/* Right Side: Instructions */}
+          <div className="p-6 md:p-8 flex-1 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-4 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-600 dark:text-blue-400 font-bold uppercase text-xl tracking-tight">
+                <ShieldCheck className="w-6 h-6" />
+                Free Registration Open
+              </div>
+
+              <h4 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+                Apply now to reserve your seat.{" "}
+                <br className="hidden md:block" />
+                Finalize your enrollment on WhatsApp.
+              </h4>
+
+              <p className="text-slate-600 dark:text-slate-400 text-sm max-w-xl">
+                Submit your application today with{" "}
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold">
+                  zero upfront payment
+                </span>
+                . Once accepted, you will join the{" "}
+                <span className="font-bold text-slate-900 dark:text-white underline decoration-blue-500 underline-offset-4">
+                  Skellify WhatsApp Group
+                </span>{" "}
+                where we will share the full details and complete the fee
+                payment process before the batch begins.
+              </p>
+            </div>
+
+            {/* Quick Icon Group */}
+            <div className="flex items-center">
+              <a
+                href="https://chat.whatsapp.com/Fi19RL9SBtF4jWklMqsqsh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 px-8 py-5 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 transition-all duration-200 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-emerald-200 dark:hover:border-emerald-900 group"
+              >
+                <MessageCircle className="w-7 h-7 text-emerald-500 group-hover:scale-110 transition-transform" />
+                <span className="text-xs font-black text-slate-500 group-hover:text-emerald-600">
+                  JOIN SKELLIFY
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      {/* --- END BANNER --- */}
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -105,12 +173,11 @@ export default function CoursePage() {
           Courses Built for Real Skills
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
-          Industry-aligned programs at <strong>Skellify</strong> designed to build
-          strong fundamentals, practical experience, and job-ready confidence —
-          without overwhelming theory.
+          Industry-aligned programs at <strong>Skellify</strong> designed to
+          build strong fundamentals, practical experience, and job-ready
+          confidence — without overwhelming theory.
         </p>
       </motion.div>
-
       {/* Course Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {COURSES.map((course, index) => (
@@ -181,7 +248,6 @@ export default function CoursePage() {
           </motion.div>
         ))}
       </div>
-
       {/* Curriculum Modal */}
       <AnimatePresence>
         {activeCourse && (
