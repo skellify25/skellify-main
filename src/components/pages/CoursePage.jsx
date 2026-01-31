@@ -23,7 +23,7 @@ const COURSES = [
     certificate: true,
     price: "9,999",
     offerPrice: "4,999",
-    formUrl: "https://forms.gle/iMuCovv3HEzfLeBJ9",
+    formUrl: "https://forms.gle/NLDrxbkH1Pefhnx97",
     highlights: [
       "Development Environment Setup: VS Code & Linux Basics",
       "Web Development Fundamentals: HTML, CSS & JavaScript",
@@ -46,7 +46,7 @@ const COURSES = [
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/AJJX9TEi9zjtu4yC8",
+    formUrl: "https://forms.gle/fB6bp8vdHbHxPqng6",
     highlights: [
       "Introduction to Programming & Python Environment Setup",
       "Python Basics: Syntax, Variables & Data Types",
@@ -69,7 +69,7 @@ const COURSES = [
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/RArQVnXzfBzrnggx9",
+    formUrl: "https://forms.gle/C11uL7TnYSbPgYxZA",
     highlights: [
       "Introduction to Java & Development Environment Setup",
       "Java Basics: Syntax, Variables & Data Types",
