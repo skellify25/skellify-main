@@ -14,10 +14,10 @@ import {
 
 const COURSES = [
   {
-    id: "foundation-skill",
-    title: "Foundation Skill Development Course",
+    id: "foundation-skill-development",
+    title: "Foundation Skill Development Program",
     description:
-      "A comprehensive 7-month program covering Frontend, Python, Automation, and API basics for students.",
+      "A structured 7-month foundation program designed to take students from zero technical knowledge to real-world development, automation testing, and API fundamentals. This course focuses on industry tools, logical thinking, hands-on practice, and deployment-ready skills to build a strong base for careers in software development, testing, and IT roles.",
     duration: "7 Months",
     level: "Class 9th & Above",
     mode: "Live Classes (Online)",
@@ -26,20 +26,21 @@ const COURSES = [
     offerPrice: "4,999",
     formUrl: "https://forms.gle/xV14cyGDGHyjR9tB6",
     highlights: [
-      "Frontend: HTML, CSS & JavaScript",
-      "Python Programming & OOPs Logic",
-      "UI Automation with Selenium",
-      "API Testing Basics (Postman)",
-      "Portfolio Website Development",
-      "Logical Problem Solving",
-      "Introduction to Git & GitHub",
+      "Development Environment Setup: VS Code & Linux Basics",
+      "Web Development Fundamentals: HTML, CSS & JavaScript",
+      "Version Control & Collaboration using Git and GitHub",
+      "Live Project Deployment using Netlify / Vercel",
+      "Python Programming with Core Concepts & OOPs",
+      "Logical Problem Solving using Python",
+      "Automation Testing Basics with Selenium (UI Testing)",
+      "API Fundamentals & API Testing using Postman",
     ],
   },
   {
-    id: "python-oops",
-    title: "Python Programming with OOPs",
+    id: "python-programming-oops-foundation",
+    title: "Python Programming with OOPs (Core Concepts & Logic)",
     description:
-      "Master Python fundamentals and Object-Oriented Programming to build a strong logic foundation.",
+      "A beginner-friendly Python course focused on building strong programming logic, core data structures, and Object-Oriented Programming concepts. Designed to help students write clean code, think logically, and prepare for advanced learning paths such as automation testing, backend development, and software testing roles.",
     duration: "3 Months",
     level: "Class 9th & Above",
     mode: "Live Classes (Online)",
@@ -48,20 +49,21 @@ const COURSES = [
     offerPrice: "2,999",
     formUrl: "https://forms.gle/HEZnryu37EWhXdQK6",
     highlights: [
-      "Python Syntax & Data Types",
-      "Advanced OOPs: Classes & Objects",
-      "Exception Handling & Debugging",
-      "File I/O & Data Management",
-      "Library Management System Project",
-      "Functional Programming Basics",
-      "Scripting for Daily Tasks",
+      "Introduction to Programming & Python Environment Setup",
+      "Python Basics: Syntax, Variables & Data Types",
+      "Control Flow: Conditions, Loops & Logical Thinking",
+      "Functions & Modular Programming Concepts",
+      "Core Data Structures: List, Tuple, Set & Dictionary",
+      "Object-Oriented Programming: Classes & Objects",
+      "OOPs Principles: Inheritance, Polymorphism & Encapsulation",
+      "Exception Handling, Debugging & File Handling Basics",
     ],
   },
   {
-    id: "java-oops",
-    title: "Java Programming with OOPs",
+    id: "java-programming-oops-foundation",
+    title: "Java Programming with OOPs (Core Concepts & Logic)",
     description:
-      "Deep dive into Java, JVM architecture, and Collections framework. Perfect for building backend logic.",
+      "A beginner-friendly Java course focused on building strong programming fundamentals, object-oriented thinking, and logical problem-solving. Designed to help students understand core Java concepts, write structured code, and prepare for advanced learning paths such as backend development, automation testing, and enterprise-level applications.",
     duration: "3 Months",
     level: "Class 9th & Above",
     mode: "Live Classes (Online)",
@@ -70,35 +72,14 @@ const COURSES = [
     offerPrice: "2,999",
     formUrl: "https://forms.gle/Vrk2K7EGqjZ9RyHW8",
     highlights: [
-      "Installing Java & Writing Your First Program",
-      "Syntax, Variables & Data Types",
-      "Conditional Statements & Loops",
-      "Understanding OOP Concepts (Class, Object, Inheritance)",
-      "Methods, Constructors & Access Modifiers",
-      "Arrays & Introduction to Collections",
-      "Exception Handling",
-    ],
-  },
-  {
-    id: "sdet-program",
-    title: "SDET (Software Development Engineer in Test)",
-    description:
-      "Advanced 9-month program for graduates to become job-ready automation engineers.",
-    duration: "9 Months",
-    level: "Graduation & Above",
-    mode: "Live Classes (Online)",
-    certificate: true,
-    price: "19,999",
-    offerPrice: "9,999",
-    formUrl: "https://forms.gle/N7G18ivcsdLXcxNs5",
-    highlights: [
-      "Core & Advanced Java with Gradle",
-      "Selenium WebDriver & TestNG Integration",
-      "Rest Assured API Automation",
-      "CI/CD Pipeline Integration with Jenkins",
-      "Agile Testing & Jira Ticket Management",
-      "Database Testing with SQL",
-      "Mock Interviews & Resume Optimization",
+      "Introduction to Java & Development Environment Setup",
+      "Java Basics: Syntax, Variables & Data Types",
+      "Control Flow: Conditional Statements & Loops",
+      "Methods & Modular Programming in Java",
+      "Object-Oriented Programming: Classes & Objects",
+      "OOPs Principles: Inheritance, Polymorphism & Encapsulation",
+      "Arrays & Introduction to Java Collections",
+      "Exception Handling & Basic Debugging Concepts",
     ],
   },
 ];
@@ -222,11 +203,18 @@ export default function CoursePage() {
         className="max-w-3xl mb-12 md:mb-16 text-center md:text-left"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-900 dark:text-white">
-          Our Courses
+          Courses Built for Real Skills
         </h1>
+
         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
-          Industry-vetted programs at <strong>Skellify</strong>. Gain hands-on
-          OJT experience while mastering modern technology.
+          Industry-aligned programs at <strong>Skellify</strong> focused on
+          building strong fundamentals, practical experience, and job-ready
+          confidence. Learn through structured courses, live projects, and
+          guided practice — so you understand{" "}
+          <span className="font-medium text-slate-700 dark:text-slate-300">
+            how things actually work
+          </span>
+          , not just what to study.
         </p>
       </motion.div>
 
@@ -245,7 +233,9 @@ export default function CoursePage() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">
-                  {course.id === "sdet-program" ? "Job Ready" : "Skill Up"}
+                  {course.id === "foundation-skill-development"
+                    ? "Job Ready"
+                    : "Skill Up"}
                 </span>
               </div>
               <h2 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-white leading-tight">

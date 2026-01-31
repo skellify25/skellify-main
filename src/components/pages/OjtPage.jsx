@@ -1,83 +1,110 @@
 "use client";
 
-import { motion } from "framer-motion"; 
-import { Clock, Award, Layers, Video, IndianRupee, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Clock,
+  Award,
+  Layers,
+  Video,
+  IndianRupee,
+  ExternalLink,
+} from "lucide-react";
 
 const OJT_PROGRAMS = [
   {
-    id: "automation-testing-ojt",
-    title: "Automation Testing OJT",
-    description: "Work on live industry projects using Selenium, Java, and TestNG. Gain hands-on experience in building automation frameworks.",
-    duration: "1 Month",
+    id: "automation-testing-ojt-program",
+    title: "Automation Testing OJT Program (Industry Practice)",
+    description:
+      "A hands-on On-the-Job Training program focused on real-world automation testing practices. Participants work on live websites, build automation frameworks, and understand industry-level testing workflows. The program includes 1 month of practical OJT followed by 2 weeks of free mentorship for guided project development and improvement.",
+    duration: "1 Month OJT + 2 Weeks Free Mentorship",
     level: "Beginner to Intermediate",
     mode: "Online",
     certificate: true,
     price: "4,000",
     offerPrice: "2,500",
     formUrl: "https://forms.gle/AUTOMATION_OJT_FORM",
-    highlights: ["Live Website Testing", "Framework Development", "Bug Reporting & Tracking", "Project Development"]
+    highlights: [
+      "Live Website Automation Testing",
+      "Automation Framework Development",
+      "Bug Reporting & Defect Tracking Process",
+      "Real-world Project Implementation",
+    ],
   },
+
   {
-    id: "web-development-ojt",
-    title: "Web Development OJT",
-    description: "Contribute to real-world web applications. Master React.js, Tailwind CSS, and API integration in a professional environment.",
-    duration: "1 Month",
+    id: "web-development-ojt-program",
+    title: "Web Development OJT Program (Live Project Based)",
+    description:
+      "An industry-oriented OJT program where participants contribute to real-world web applications. The focus is on frontend development, API integration, and collaborative workflows. The program includes 1 month of practical OJT along with 2 weeks of free mentorship to support end-to-end project development and refinement.",
+    duration: "1 Month OJT + 2 Weeks Free Mentorship",
     level: "Beginner to Intermediate",
     mode: "Online",
     certificate: true,
     price: "4,000",
     offerPrice: "2,500",
     formUrl: "https://forms.gle/WEB_DEV_OJT_FORM",
-    highlights: ["Frontend Architecture", "Database Integration", "GitHub Collaboration", "Project Development"]
+    highlights: [
+      "Frontend Architecture & Component Design",
+      "API & Backend Integration",
+      "GitHub Collaboration & Version Control",
+      "Live Project Development",
+    ],
   },
+
   {
-    id: "app-development-ojt",
-    title: "App Development OJT",
-    description: "Learn to build and debug mobile applications. Experience the complete lifecycle from UI design to app performance tuning.",
-    duration: "1 Month",
+    id: "app-development-ojt-program",
+    title: "App Development OJT Program (Mobile Application)",
+    description:
+      "A practical OJT program focused on mobile application development and debugging. Participants work on real app modules, implement APIs, and understand the complete application lifecycle. The program includes 1 month of OJT followed by 2 weeks of free mentorship for guided project completion and performance improvements.",
+    duration: "1 Month OJT + 2 Weeks Free Mentorship",
     level: "Beginner to Intermediate",
     mode: "Online",
     certificate: true,
     price: "4,000",
     offerPrice: "2,500",
     formUrl: "https://forms.gle/APP_DEV_OJT_FORM",
-    highlights: ["Mobile UI/UX Implementation", "State Management", "API Integration", "Project Development"]
-  }
+    highlights: [
+      "Mobile UI/UX Implementation",
+      "State Management & Application Flow",
+      "API Integration & Data Handling",
+      "Real-world App Project Development",
+    ],
+  },
 ];
 
 export default function OjtPage() {
-  
   // --- DYNAMIC JSON-LD FOR OJT PROGRAMS ---
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Skellify On-Job Training (OJT) Programs",
-    "description": "One-month industry-oriented training with live project exposure.",
-    "itemListElement": OJT_PROGRAMS.map((program, index) => ({
+    name: "Skellify On-Job Training (OJT) Programs",
+    description:
+      "One-month industry-oriented training with live project exposure.",
+    itemListElement: OJT_PROGRAMS.map((program, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "item": {
+      position: index + 1,
+      item: {
         "@type": "Course",
-        "name": program.title,
-        "description": program.description,
-        "provider": {
+        name: program.title,
+        description: program.description,
+        provider: {
           "@type": "Organization",
-          "name": "Skellify",
-          "sameAs": "https://skellify.com"
+          name: "Skellify",
+          sameAs: "https://skellify.com",
         },
-        "offers": {
+        offers: {
           "@type": "Offer",
-          "price": program.offerPrice.replace(",", ""),
-          "priceCurrency": "INR",
-          "availability": "https://schema.org/InStock" // Helps with search visibility
+          price: program.offerPrice.replace(",", ""),
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock", // Helps with search visibility
         },
-        "hasCourseInstance": {
+        hasCourseInstance: {
           "@type": "CourseInstance",
-          "courseMode": "Online",
-          "duration": "P1M" // ISO 8601 format for 1 Month
-        }
-      }
-    }))
+          courseMode: "Online",
+          duration: "P1M", // ISO 8601 format for 1 Month
+        },
+      },
+    })),
   };
 
   return (
@@ -95,10 +122,14 @@ export default function OjtPage() {
         className="max-w-3xl mb-16 text-center md:text-left"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
-          On Job Training (OJT)
+          On-the-Job Training (OJT)
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-lg">
-          One-month industry-oriented training programs with <strong>live project exposure</strong>, mentorship, and professional certification.
+
+        <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+          Industry-oriented training programs designed to give you real work
+          experience through live projects. Learn by doing, get guided
+          mentorship, and complete your journey with professional certification
+          — not simulated tasks.
         </p>
       </motion.div>
 
@@ -121,7 +152,7 @@ export default function OjtPage() {
                   {program.title}
                 </h2>
               </header>
-              
+
               <p className="text-slate-600 dark:text-slate-400 mb-5 text-sm leading-relaxed">
                 {program.description}
               </p>
@@ -174,8 +205,8 @@ export default function OjtPage() {
 
             {/* Application Status Button */}
             <div className="mt-8 p-4 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 text-center text-sm font-bold border border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center gap-2">
-               Closed
-               <Clock className="w-4 h-4" />
+              Closed
+              <Clock className="w-4 h-4" />
             </div>
           </motion.article>
         ))}
