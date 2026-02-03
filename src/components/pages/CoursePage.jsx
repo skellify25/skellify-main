@@ -21,12 +21,13 @@ const COURSES = [
     title: "Foundation Skill Development Program",
     description:
       "A structured foundation program designed to take learners from zero technical knowledge to real-world development, automation testing, and API fundamentals using industry tools and hands-on practice.",
-    duration: "7 Months",
+    duration: "4 Months",
+    frequency: "5 classes/week",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "9,999",
     offerPrice: "4,999",
-    formUrl: "https://forms.gle/NLDrxbkH1Pefhnx97",
+    formUrl: "https://forms.gle/8Si6GePwSBYGepg27",
     highlights: [
       "Development Environment Setup: VS Code & Linux Basics",
       "Web Development Fundamentals: HTML, CSS & JavaScript",
@@ -45,11 +46,12 @@ const COURSES = [
     description:
       "A beginner-friendly Python course focused on programming fundamentals, core data structures, and object-oriented thinking to build strong logic and clean coding practices.",
     duration: "3 Months",
+    frequency: "3 classes/week",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/fB6bp8vdHbHxPqng6",
+    formUrl: "https://forms.gle/cBhjDimrHXCBXNa8A",
     highlights: [
       "Introduction to Programming & Python Environment Setup",
       "Python Basics: Syntax, Variables & Data Types",
@@ -68,11 +70,12 @@ const COURSES = [
     description:
       "A Java course focused on building strong programming fundamentals, object-oriented design, and logical problem-solving for backend and enterprise-level development paths.",
     duration: "3 Months",
+    frequency: "3 classes/week",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "5,999",
     offerPrice: "2,999",
-    formUrl: "https://forms.gle/C11uL7TnYSbPgYxZA",
+    formUrl: "https://forms.gle/vzrjcm4wAboXSy3C7",
     highlights: [
       "Introduction to Java & Development Environment Setup",
       "Java Basics: Syntax, Variables & Data Types",
@@ -211,6 +214,10 @@ export default function CoursePage() {
                   <Video className="w-4 h-4 text-blue-600" />
                   Live Online
                 </div>
+                <div className="flex items-center gap-2">
+                  <CalendarDays className="w-4 h-4 text-blue-600" />
+                  {course.frequency}
+                </div>
               </div>
 
               {/* Pricing */}
@@ -268,7 +275,7 @@ export default function CoursePage() {
                 {activeCourse.title}
               </h3>
               <p className="text-sm text-slate-500 mb-6">
-                Complete Curriculum Overview
+                Complete Curriculum Overview • {activeCourse.frequency}
               </p>
 
               <ul className="space-y-3 text-slate-700 dark:text-slate-300 mb-8">
