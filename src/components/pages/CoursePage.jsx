@@ -22,7 +22,7 @@ const COURSES = [
     description:
       "A structured foundation program designed to take learners from zero technical knowledge to real-world development, automation testing, and API fundamentals using industry tools and hands-on practice.",
     duration: "4 Months",
-    frequency: "5 classes/week",
+    frequency: "4 classes/week",
     mode: "Live Classes (Online)",
     certificate: true,
     price: "9,999",
