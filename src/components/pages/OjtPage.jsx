@@ -21,11 +21,11 @@ const OJT_PROGRAMS = [
     title: "Automation Testing OJT Program (Industry Practice)",
     description:
       "A hands-on On-the-Job Training program focused on real-world automation testing practices. Participants work on live websites, build automation frameworks, and follow industry-level QA workflows.",
-    duration: "1 Month OJT + 2 Weeks Free Mentorship",
+    duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "4,000",
-    offerPrice: "2,500",
+    price: "3,000",
+    offerPrice: "1,499",
     formUrl: "https://forms.gle/9uTdGVwKN8V4dyZT8",
     highlights: [
       "Live Website Automation Testing",
@@ -40,11 +40,11 @@ const OJT_PROGRAMS = [
     title: "Web Development OJT Program (Live Project Based)",
     description:
       "An industry-oriented OJT program where participants contribute to real-world web applications, work with APIs, and collaborate using professional development workflows.",
-    duration: "1 Month OJT + 2 Weeks Free Mentorship",
+    duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "4,000",
-    offerPrice: "2,500",
+    price: "3,000",
+    offerPrice: "1,499",
     formUrl: "https://forms.gle/9ooHGVh9RstUfMFw8",
     highlights: [
       "Frontend Architecture & Component Design",
@@ -59,11 +59,11 @@ const OJT_PROGRAMS = [
     title: "App Development OJT Program (Mobile Application)",
     description:
       "A practical OJT program focused on building and debugging mobile applications, covering UI implementation, API integration, and application lifecycle understanding.",
-    duration: "1 Month OJT + 2 Weeks Free Mentorship",
+    duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "4,000",
-    offerPrice: "2,500",
+    price: "3,000",
+    offerPrice: "1,499",
     formUrl: "https://forms.gle/gd5A8DnEkJXEwYYu7",
     highlights: [
       "Mobile UI/UX Implementation",
