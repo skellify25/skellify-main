@@ -24,8 +24,8 @@ const OJT_PROGRAMS = [
     duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "3,000",
-    offerPrice: "1,499",
+    price: "4,999",
+    offerPrice: "2,499",
     formUrl: "https://forms.gle/9uTdGVwKN8V4dyZT8",
     highlights: [
       "Live Website Automation Testing",
@@ -43,8 +43,8 @@ const OJT_PROGRAMS = [
     duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "3,000",
-    offerPrice: "1,499",
+    price: "4,999",
+    offerPrice: "2,499",
     formUrl: "https://forms.gle/9ooHGVh9RstUfMFw8",
     highlights: [
       "Frontend Architecture & Component Design",
@@ -62,8 +62,8 @@ const OJT_PROGRAMS = [
     duration: "1 Month OJT",
     mode: "Online",
     certificate: true,
-    price: "3,000",
-    offerPrice: "1,499",
+    price: "4,999",
+    offerPrice: "2,499",
     formUrl: "https://forms.gle/gd5A8DnEkJXEwYYu7",
     highlights: [
       "Mobile UI/UX Implementation",
