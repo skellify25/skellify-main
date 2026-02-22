@@ -9,6 +9,7 @@ import {
   Instagram, 
   Facebook 
 } from "lucide-react";
+import Image from "next/image";
 import { WHATSAPP_LINK, INSTAGRAM_LINK } from "@/constants/contact";
 
 // Custom X (formerly Twitter) Icon Component
@@ -33,8 +34,27 @@ const Footer = () => {
           
           {/* Brand Section */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="text-2xl font-bold tracking-tighter">
-              <span className="text-primary">Skell</span>ify.
+            <Link href="/" className="flex items-center font-bold tracking-tighter">
+              <Image
+                src="/ske_1.png"
+                alt="Skellify Logo"
+                width={56}
+                height={56}
+                priority
+                className="object-contain shrink-0
+                          h-10 w-10
+                          sm:h-12 sm:w-12
+                          md:h-14 md:w-14
+                          lg:h-16 lg:w-16"
+              />
+
+              <span
+                className="leading-none -ml-1
+                          text-lg
+                          sm:text-xl
+                          md:text-2xl">
+                <span className="text-primary">Skell</span>ify.
+              </span>
             </Link>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">
               Your partner in digital transformation and technical excellence. We build robust software for global businesses while mentoring the next generation of tech talent through hands-on experience.
