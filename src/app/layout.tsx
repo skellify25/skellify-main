@@ -15,62 +15,81 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// --- ENHANCED SEO METADATA ---
+// 🌐 Replace with your actual production domain
+const siteUrl = "https://www.skellify.com";
+
+// --- COMPLETE SEO METADATA ---
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "Skellify | IT Training, OJT Programs & Software Solutions",
-    template: "%s | Skellify", // Allows internal pages to have titles like "Courses | Skellify"
+    template: "%s | Skellify",
   },
+
   description:
-    "Skellify provides industry-leading IT training, OJT programs, and certifications for students. We also offer expert software development, automation, and digital transformation for businesses.",
+    "Skellify provides industry-leading IT training, On-the-Job Training (OJT), SDET, Automation, and Software Development services. Skill. Automate. Grow.",
+
   keywords: [
-    "IT Training",
-    "On the Job Training (OJT)",
-    "Software Development",
-    "Python Automation",
+    "Skellify",
+    "IT Training India",
+    "OJT Programs",
     "SDET Course",
-    "Java Programming",
-    "Digital Transformation",
-    "Skellify India",
-    "API Testing",
+    "Automation Testing",
+    "Python Automation",
+    "Software Development Company",
+    "API Testing Course",
     "Frontend Development",
+    "Digital Transformation",
+    "Tech Training Institute",
   ],
-  authors: [{ name: "Skellify Team" }],
+
+  authors: [{ name: "Skellify Team", url: siteUrl }],
   creator: "Skellify",
   publisher: "Skellify",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  category: "Technology",
+
+  // 📌 FAVICON & APP ICONS
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
-  // Social Media - OpenGraph (Facebook, LinkedIn)
+
+  // 📱 OPEN GRAPH (Facebook, LinkedIn, WhatsApp Preview)
   openGraph: {
     title: "Skellify | Skill. Automate. Grow.",
-    description: "Industry-vetted IT training and professional software solutions.",
-    url: "https://www.skellify.com", // Replace with your actual domain
+    description:
+      "Industry-vetted IT training, OJT programs, certifications, and professional software solutions for students and businesses.",
+    url: siteUrl,
     siteName: "Skellify",
     images: [
       {
-        url: "/og-image.jpg", // Create a 1200x630 image in your /public folder
+        url: "/og-image.jpg", // 1200x630 recommended (place inside /public)
         width: 1200,
         height: 630,
-        alt: "Skellify IT Training and Solutions",
+        alt: "Skellify IT Training & Software Solutions",
       },
     ],
     locale: "en_US",
     type: "website",
   },
-  // Social Media - Twitter
+
+  // 🐦 TWITTER SEO
   twitter: {
     card: "summary_large_image",
-    title: "Skellify | IT Training & Business Solutions",
-    description: "Bridging the gap between students and industry standards through OJT.",
+    title: "Skellify | IT Training & Software Solutions",
+    description:
+      "Bridging the gap between students and industry with OJT, SDET, Automation & real-world tech training.",
     images: ["/og-image.jpg"],
+    creator: "@skellify", // optional (add if you have Twitter)
   },
-  // Search Engine Crawlers
+
+  // 🔎 SEARCH ENGINE ROBOTS
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -79,6 +98,21 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
+  // 📍 CANONICAL URL (Prevents duplicate SEO issues)
+  alternates: {
+    canonical: siteUrl,
+  },
+
+  // 📱 MOBILE & APP SETTINGS
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+
+  // 🎨 THEME COLOR (Browser UI color)
+  themeColor: "#0f172a", // change to your brand color if needed
 };
 
 export default function RootLayout({
@@ -88,6 +122,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Extra SEO + Performance */}
+        <link rel="canonical" href={siteUrl} />
+        <meta name="application-name" content="Skellify" />
+        <meta name="apple-mobile-web-app-title" content="Skellify" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -98,7 +142,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-            {children}
+          {children}
           <Footer />
         </ThemeProvider>
       </body>

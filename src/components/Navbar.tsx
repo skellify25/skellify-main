@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +50,29 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
+
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-tighter">
-          <span className="text-primary">Skell</span>ify.
+        <Link href="/" className="flex items-center font-bold tracking-tighter">
+          <Image
+            src="/ske_1.png"
+            alt="Skellify Logo"
+            width={56}
+            height={56}
+            priority
+            className="object-contain shrink-0
+                      h-10 w-10
+                      sm:h-12 sm:w-12
+                      md:h-14 md:w-14
+                      lg:h-16 lg:w-16"
+          />
+
+          <span
+            className="leading-none -ml-1
+                      text-lg
+                      sm:text-xl
+                      md:text-2xl">
+            <span className="text-primary">Skell</span>ify.
+          </span>
         </Link>
 
         {/* Desktop Menu */}
