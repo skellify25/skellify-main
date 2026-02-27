@@ -35,19 +35,6 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center font-bold tracking-tighter">
-              <Image
-                src="/ske_1.png"
-                alt="Skellify Logo"
-                width={56}
-                height={56}
-                priority
-                className="object-contain shrink-0
-                          h-10 w-10
-                          sm:h-12 sm:w-12
-                          md:h-14 md:w-14
-                          lg:h-16 lg:w-16"
-              />
-
               <span
                 className="leading-none -ml-1
                           text-lg
