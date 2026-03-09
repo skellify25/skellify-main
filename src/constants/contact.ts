@@ -1,4 +1,5 @@
-import { Linkedin, Instagram, Globe, Smartphone, TestTube2, GitBranch } from "lucide-react";
+import { Linkedin, Instagram, Globe, Smartphone, TestTube2, GitBranch, Hammer, TrendingUp, Cpu } from "lucide-react";
+
 
 export const WHATSAPP_LINK = "https://wa.me/7070584967";
 export const CALENDAR_LINK = "https://calendar.app.google/7o1oSUhohvqXucYM6";
@@ -119,5 +120,29 @@ export const services = [
             "Quality metrics dashboard",
             "Team training sessions",
         ],
+    }
+]
+
+export const principles = [
+    {
+        icon: Hammer,
+        title: "Practical Engineering",
+        description:
+            "We believe the best way to learn engineering is to do engineering. Every program and project is grounded in real-world practice.",
+        color: "#1E3A8A",
+    },
+    {
+        icon: TrendingUp,
+        title: "Learning by Building",
+        description:
+            "Passive learning creates passive developers. We create active learners who build, fail fast, iterate, and grow.",
+        color: "#F97316",
+    },
+    {
+        icon: Cpu,
+        title: "Automation Culture",
+        description:
+            "Automation is not a feature — it's a mindset. We embed automation thinking into every program and delivery.",
+        color: "#1E3A8A",
     },
 ];
