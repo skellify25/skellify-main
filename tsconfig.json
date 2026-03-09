@@ -39,7 +39,7 @@
     "src/components/pages/OjtPage.jsx",
     "src/components/pages/CoursePage.jsx",
     "src/components/pages/ContactPage.jsx",
-    "src/components/pages/AboutPage.jsx"
+    "src/components/pages/AboutPage.tsx"
   ],
   "exclude": [
     "node_modules"
