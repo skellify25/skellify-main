@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "src/components/pages/ServicesPage.jsx",
+    "src/components/pages/ServicesPage.tsx",
     "src/components/pages/OjtPage.jsx",
     "src/components/pages/CoursePage.jsx",
     "src/components/pages/ContactPage.jsx",
