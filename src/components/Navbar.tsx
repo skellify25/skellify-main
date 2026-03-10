@@ -1,116 +1,135 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { useTheme } from "next-themes";
-import Image from "next/image";
+import React, { useState, useEffect } from "react"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { motion, AnimatePresence } from "motion/react"
+import { Sun, Moon, Menu, X } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { navLinks } from "@/constants/contact"
+import Image from "next/image"
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+export default function Navbar() {
 
-  const { resolvedTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
-  /* ✅ Effect 1: mark client-side mount */
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  /* ✅ Effect 2: Scroll detection */
-  useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+      setScrolled(window.scrollY > 20)
+    }
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* ✅ Prevent hydration mismatch */
-  if (!mounted) return null;
-
-  const navLinks = [
-    { name: "Courses", href: "/courses" },
-    { name: "OJT", href: "/ojt" },
-    { name: "Services", href: "/services" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 mx-auto ${
-        isScrolled
-          ? "backdrop-blur-3xl bg-slate-500/10 py-2 w-[90%] md:w-[80%] top-4 rounded-full shadow-lg"
-          : "bg-transparent py-6 w-full top-0"
-      }`}
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background backdrop-blur-md shadow-sm border-none border-border"
+          : "bg-transparent"
+      )}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container-xl">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/favicon.ico" height={30} width={30} alt="Logo" />
+            <span className="text-xl font-extrabold tracking-tight">
+              <span className="text-primary dark:text-white">SKELL</span>
+              <span className="text-accent">IFY</span>
+            </span>
+          </Link>
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center font-bold tracking-tighter">
-          <span
-            className="leading-none -ml-1
-                      text-lg
-                      sm:text-xl
-                      md:text-2xl">
-            <span className="text-primary">Skell</span>ify.
-          </span>
-        </Link>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-4 py-2 text-sm font-medium rounded-lg transition-colors text-foreground hover:text-primary hover:bg-surface"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          <div className="flex items-center gap-3">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-lg text-muted hover:bg-surface transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark"
+                  ? <Sun size={18} />
+                  : <Moon size={18} />
+                }
+              </button>
+            )}
+
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-foreground/80 hover:text-primary transition-colors text-sm font-medium"
+              href="/contact"
+              className="hidden md:inline-flex btn-primary text-sm py-2.5"
             >
-              {link.name}
+              Get Started
             </Link>
-          ))}
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen((prev) => !prev)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+            {/* Mobile menu toggle */}
+            <button
+              className="md:hidden p-2 rounded-lg text-foreground hover:bg-surface transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle Menu"
+            >
+              {mobileOpen
+                ? <X size={20} />
+                : <Menu size={20} />
+              }
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-lg border-b shadow-lg py-6"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-background border-t border-border overflow-hidden"
           >
-            <div className="flex flex-col space-y-4 px-6">
+            <div className="container-xl py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
-                  className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setMobileOpen(false)}
+                  className="px-4 py-3 text-sm font-medium rounded-lg text-foreground hover:bg-surface transition-colors"
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               ))}
+
+              <div className="pt-2 border-t border-border mt-2">
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn-primary w-full justify-center text-sm"
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
-  );
-};
-
-export default Navbar;
+    </header>
+  )
+}
