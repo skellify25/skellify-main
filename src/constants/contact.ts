@@ -23,6 +23,7 @@ import {
 
 export const WHATSAPP_LINK = "https://wa.me/7070584967";
 export const CALENDAR_LINK = "https://calendar.app.google/7o1oSUhohvqXucYM6";
+export const GOOGLE_FORM_CONTACT_URL = "https://forms.gle/ebK5fyUViaEftNzQ6";
 export const INSTAGRAM_LINK = "https://www.instagram.com/skellify.official/";
 
 export const navLinks = [

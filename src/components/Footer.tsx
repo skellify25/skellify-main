@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-white">
+    <footer className="bg-background text-foreground">
       <div className="container-xl py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
@@ -85,7 +85,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted hover:text-white transition-colors"
+                      className="text-sm text-foregroud hover:text-muted"
                     >
                       {link.label}
                     </Link>
