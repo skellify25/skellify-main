@@ -18,7 +18,7 @@ export function WhySkellifySection() {
         >
           <span className="section-tag">Why Choose Us</span>
 
-          <h2 className="text-[32px] md:text-[40px] font-extrabold tracking-tight">
+          <h2 className="text-[30px] md:text-[36px] font-extrabold tracking-tight">
             Why Skellify
           </h2>
 

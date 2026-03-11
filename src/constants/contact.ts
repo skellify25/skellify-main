@@ -19,6 +19,7 @@ import {
     ShieldCheck,
     Users,
     Award,
+    Wrench,
 } from "lucide-react";
 
 export const WHATSAPP_LINK = "https://wa.me/7070584967";
@@ -114,44 +115,44 @@ export const services = [
     },
     {
         icon: TestTube2,
-        title: "Automation Testing",
+        title: "Automation Testing & Quality Assurance",
         description:
-            "Implement comprehensive test automation frameworks that improve product reliability and give your team the confidence to ship faster.",
+            "Build robust automation frameworks and quality-driven engineering practices that ensure reliable software, faster releases, and continuous delivery.",
         color: "#2E2EFF",
         features: [
             "End-to-end test automation",
             "Selenium, Playwright, Cypress",
             "API test automation",
-            "Mobile test automation",
-            "Performance and load testing",
-            "CI/CD integration",
+            "CI/CD pipeline integration",
+            "Automated quality checks and code gates",
+            "Performance and load testing"
         ],
         deliverables: [
             "Test automation framework",
-            "Test reports dashboard",
-            "Maintenance documentation",
+            "CI/CD integrated testing pipeline",
+            "Quality metrics and test reports dashboard"
         ],
     },
     {
-        icon: GitBranch,
-        title: "Quality Engineering",
+        icon: Wrench,
+        title: "Maintenance & Support",
         description:
-            "Design end-to-end testing pipelines and CI/CD automation strategies that embed quality as a practice, not an afterthought.",
-        color: "#F97316",
+            "Ensure long-term stability, performance, and security of your applications with proactive monitoring, regular updates, and reliable technical support.",
+        color: "#22C55E",
         features: [
-            "CI/CD pipeline design",
-            "GitHub Actions, Jenkins, GitLab CI",
-            "Automated code quality gates",
-            "Deployment automation",
-            "Monitoring and alerting setup",
-            "Engineering process consulting",
+            "Application monitoring and uptime tracking",
+            "Bug fixing and issue resolution",
+            "Performance optimization",
+            "Security patches and updates",
+            "Dependency and framework updates",
+            "Database maintenance and backups",
         ],
         deliverables: [
-            "Full CI/CD pipeline",
-            "Quality metrics dashboard",
-            "Team training sessions",
+            "Regular maintenance reports",
+            "Performance and uptime monitoring",
+            "Ongoing technical support",
         ],
-    },
+    }
 ];
 
 export const principles = [
@@ -244,7 +245,7 @@ export const programs = [
             "Problem solving",
         ],
         color: "#1E3A8A",
-        duration: "8 Weeks",
+        duration: "4 months",
     },
     {
         icon: Globe,
@@ -252,12 +253,12 @@ export const programs = [
         level: "Intermediate",
         topics: ["Frontend frameworks", "Backend APIs", "Deployment"],
         color: "#F97316",
-        duration: "12 Weeks",
+        duration: "4 months",
         featured: true,
     },
     {
         icon: TestTube2,
-        title: "Automation Testing",
+        title: "Automation Testing & Quality Assurance",
         level: "Intermediate",
         topics: [
             "Automation frameworks",
@@ -265,7 +266,7 @@ export const programs = [
             "Quality engineering",
         ],
         color: "#1E3A8A",
-        duration: "10 Weeks",
+        duration: "1 months",
     },
     {
         icon: Briefcase,
@@ -277,7 +278,7 @@ export const programs = [
             "Engineering practices",
         ],
         color: "#F97316",
-        duration: "16 Weeks",
+        duration: "4 months",
     },
 ];
 
@@ -323,15 +324,17 @@ export const homeServices = [
     },
     {
         icon: TestTube2,
-        title: "Automation Testing",
-        description: "Implement automation frameworks and CI pipelines.",
-        tags: ["Selenium", "Playwright", "Cypress"],
+        title: "Automation Testing & Quality Assurance",
+        description:
+            "Build reliable automation frameworks and quality processes that ensure stable releases, faster delivery cycles, and high software reliability.",
+        tags: ["Selenium", "Playwright", "CI/CD", "GitHub Actions", "Jenkins"],
     },
     {
-        icon: GitBranch,
-        title: "Quality Engineering",
-        description: "Design CI/CD pipelines and testing systems.",
-        tags: ["CI/CD", "GitHub Actions", "Jenkins"],
+        icon: Wrench,
+        title: "Maintenance & Support",
+        description:
+            "Provide continuous monitoring, bug fixes, updates, and performance improvements to keep applications secure, stable, and running smoothly.",
+        tags: ["Bug Fixes", "Performance Optimization", "Security Updates"],
     },
 ];
 

@@ -25,7 +25,7 @@ export function CTASection() {
             <span className="inline-flex items-center gap-2 text-xs font-semibold text-accent bg-accent/15 border border-accent/25 px-4 py-1.5 rounded-full mb-6">
               Ready to Start?
             </span>
-            <h2 className="text-3xl md:text-[44px] font-extrabold text-foreground leading-tight tracking-tight mb-5">
+            <h2 className="text-3xl md:text-[36px] font-extrabold text-foreground leading-tight tracking-tight mb-5">
               Start Building Real
               <br />
               <span className="text-accent">Engineering Skills</span>

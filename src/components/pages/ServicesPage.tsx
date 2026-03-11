@@ -28,7 +28,7 @@ export default function ServicesPage() {
               Engineering Services
             </span>
 
-            <h1 className="text-[40px] md:text-[52px] font-extrabold text-foreground leading-tight tracking-tight mb-6">
+            <h1 className="text-[30px] md:text-[38px] font-extrabold text-foreground leading-tight tracking-tight mb-6">
               Software Engineering{" "}
               <span className="text-primary">That Delivers</span>
             </h1>

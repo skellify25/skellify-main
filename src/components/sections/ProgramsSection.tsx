@@ -21,7 +21,7 @@ export function ProgramsSection() {
           <div>
             <span className="section-tag">Learning</span>
 
-            <h2 className="text-[32px] md:text-[40px] font-extrabold text-foreground tracking-tight">
+            <h2 className="text-[30px] md:text-[36px] font-extrabold text-foreground tracking-tight">
               Learning Programs
             </h2>
 
