@@ -23,7 +23,7 @@ const Training = () => {
                         <span className="text-accent">Real Skills</span>
                     </h1>
                     <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-2xl">
-                        Each program is structured around industry practices, hands-on projects, and the engineering discipline that employers expect.
+                    Industry-oriented training programs designed to give you real work experience through live projects, guided mentorship, and professional certification — not simulated tasks.
                     </p>
                     <div className="flex flex-wrap gap-6">
                         {[

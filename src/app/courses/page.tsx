@@ -22,7 +22,7 @@ const Courses = () => {
             <span className="text-accent">Real Skills</span>
           </h1>
           <p className="text-base text-muted-foreground leading-relaxed mb-6 max-w-2xl">
-            Each program is structured around industry practices, hands-on projects, and the engineering discipline that employers expect.
+          Industry-aligned programs at Skellify designed to build strong fundamentals, practical experience, and job-ready confidence — without overwhelming theory.
           </p>
           <div className="flex flex-wrap gap-6">
             {[
