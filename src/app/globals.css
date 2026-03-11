@@ -1,106 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+
 @import "tailwindcss";
+
 @custom-variant dark (&:is(.dark *));
 
+/* ─────────────────────────────────────────────
+   SKELLIFY DESIGN TOKENS
+   Structure:
+   1. Primitive tokens
+   2. Semantic tokens
+   3. Tailwind theme bridge
+   4. Base / Components / Utilities
+───────────────────────────────────────────── */
+
+/* ============================================
+   1. PRIMITIVE TOKENS (Raw design values)
+   Never use these directly in components
+============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #64748b;
-  --accent: #3b82f6;
-  --glass: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.2);
+
+  /* Brand palette */
+  --blue-700: #1E3A8A;
+  --blue-600: #2563EB;
+
+  --orange-500: #F97316;
+  --orange-600: #EA6C10;
+
+  /* Neutral palette */
+  --gray-900: #0F172A;
+  --gray-700: #334155;
+  --gray-500: #64748B;
+  --gray-300: #E2E8F0;
+  --gray-100: #F5F7FA;
+  --white: #FFFFFF;
+
+  /* Dark palette */
+  --dark-900: #0c1018;
+  --dark-800: #0f121a;
+  --dark-700: #1E2A3A;
+  --dark-300: #94A3B8;
+  --dark-100: #E5E7EB;
+
+  /* Radius scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans-base: 'Plus Jakarta Sans', sans-serif;
+  --font-display-base: 'Syne', sans-serif;
+
+  /* Layout */
+  --container-xl: 1200px;
 }
+
+
+/* ============================================
+   2. SEMANTIC TOKENS
+   These are used by components
+============================================ */
+
+:root {
+
+  /* Brand semantics */
+  --color-primary: var(--blue-700);
+  --color-primary-hover: var(--blue-600);
+
+  --color-accent: var(--orange-500);
+  --color-accent-hover: var(--orange-600);
+
+  /* Surfaces */
+  --color-background: var(--white);
+  --color-surface: var(--gray-100);
+  --color-footer: var(--gray-900);
+
+  /* Text */
+  --color-foreground: var(--gray-900);
+  --color-muted: var(--gray-500);
+
+  /* Borders */
+  --color-border: var(--gray-300);
+
+  /* Typography */
+  --font-sans: var(--font-sans-base);
+  --font-display: var(--font-display-base);
+
+}
+
+
+/* ============================================
+   3. DARK THEME OVERRIDES
+============================================ */
 
 .dark {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary: #94a3b8;
-  --accent: #60a5fa;
-  --glass: rgba(15, 23, 42, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --color-background: var(--dark-900);
+  --color-surface: var(--dark-800);
+  --color-foreground: var(--dark-100);
+  --color-muted: var(--dark-300);
+  --color-border: var(--dark-700);
+
 }
+
+
+/* ============================================
+   4. TAILWIND TOKEN BRIDGE
+   Converts tokens → Tailwind utilities
+============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
-   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
-    var(--delay, 0ms);
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
 
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-footer: var(--color-footer);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: calc(var(--radius-md) + 4px);
+  --radius-full: var(--radius-full);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  /* Layout */
+  --width-container: var(--container-xl);
+
+}
+
+
+/* ============================================
+   BASE RESET
+============================================ */
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
-  @keyframes pulse-glow {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
   }
 
-  @keyframes cell-ripple {
-    0% {
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 0.4;
-    }
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
+
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+
+/* ============================================
+   COMPONENT UTILITIES
+============================================ */
+
+@layer components {
+
+  .container-xl {
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20;
+  }
+
+  /* Card */
+
+  .card-base {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: all 0.2s ease;
+  }
+
+  .card-base:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+  }
+
+  /* Primary button */
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-white font-semibold
+    px-6 py-3 rounded-[8px]
+    inline-flex items-center gap-2
+    transition-all duration-200;
+  }
+
+  /* Secondary button */
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary
+    hover:bg-primary hover:text-white
+    font-semibold px-6 py-3 rounded-[8px]
+    inline-flex items-center gap-2
+    transition-all duration-200;
+  }
+
+  /* Section tag */
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-sm font-semibold
+    text-accent bg-accent/10 px-4 py-1.5 rounded-full mb-4;
+  }
+
+  /* Gradient text */
+
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary) 0%,
+      var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+
+/* ============================================
+   UTILITIES
+============================================ */
+
+@layer utilities {
+
+  .bg-surface {
+    background: var(--color-surface);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .border-base {
+    border-color: var(--color-border);
+  }
+
 }
 
-.glow-orb {
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-  filter: blur(60px);
-  opacity: 0.4;
+
+/* ============================================
+   SCROLLBAR
+============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.grid-bg {
-  background-size: 40px 40px;
-  background-image: radial-gradient(
-    circle,
-    var(--secondary) 1px,
-    transparent 1px
-  );
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  opacity: 0.15;
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A44;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1E3A8A88;
 }
