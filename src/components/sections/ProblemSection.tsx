@@ -18,7 +18,7 @@ export function ProblemSection() {
         >
           <span className="section-tag">The Problem</span>
 
-          <h2 className="text-[32px] md:text-[40px] font-extrabold text-foreground tracking-tight">
+          <h2 className="text-[30px] md:text-[36px] font-extrabold text-foreground tracking-tight">
             The Gap Between Learning
             <br />
             <span className="text-primary">and Real Engineering</span>

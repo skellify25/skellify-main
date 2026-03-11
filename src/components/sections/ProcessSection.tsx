@@ -17,7 +17,7 @@ export function ProcessSection() {
         >
           <span className="section-tag">Process</span>
 
-          <h2 className="text-[32px] md:text-[40px] font-extrabold text-foreground tracking-tight">
+          <h2 className="text-[30px] md:text-[36px] font-extrabold text-foreground tracking-tight">
             How It Works
           </h2>
 
