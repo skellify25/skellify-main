@@ -26,8 +26,8 @@ const Courses = () => {
           </p>
           <div className="flex flex-wrap gap-6">
             {[
-              { icon: BookOpen, label: "6 Programs" },
-              { icon: Clock, label: "3–4 Months" },
+              { icon: BookOpen, label: "3 Programs" },
+              { icon: Clock, label: "2–3 Months" },
               { icon: Award, label: "ISO Certified" },
             ].map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 text-sm text-muted-foreground">
