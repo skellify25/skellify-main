@@ -108,7 +108,7 @@ export default function ProgramCard({
             onClick={() => setShowDetail(true)}
             className="flex-1 text-xs font-medium border border-border rounded-md py-2.5 hover:bg-muted transition"
           >
-            Details
+            View Details
           </button>
 
           <Link
