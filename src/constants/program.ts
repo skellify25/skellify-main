@@ -7,7 +7,7 @@ export const courses: Program[] = [
         description:
             "A structured foundation program designed to take learners from zero technical knowledge to real-world development, automation testing, and API fundamentals using industry tools and hands-on practice.",
         level: "Beginner",
-        duration: "4 Months",
+        duration: "3 Months",
         mode: "Live Classes (Online)",
         classesPerWeek: "4 classes/week",
         certificate: true,
@@ -31,7 +31,7 @@ export const courses: Program[] = [
         description:
             "A beginner-friendly Python course focused on programming fundamentals, core data structures, and object-oriented thinking to build strong logic and clean coding practices.",
         level: "Beginner",
-        duration: "3 Months",
+        duration: "2 Months",
         mode: "Live Classes (Online)",
         classesPerWeek: "3 classes/week",
         certificate: true,
@@ -55,7 +55,7 @@ export const courses: Program[] = [
         description:
             "A Java course focused on building strong programming fundamentals, object-oriented design, and logical problem-solving for backend and enterprise-level development paths.",
         level: "Beginner",
-        duration: "3 Months",
+        duration: "2 Months",
         mode: "Live Classes (Online)",
         classesPerWeek: "3 classes/week",
         certificate: true,

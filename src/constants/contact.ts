@@ -235,51 +235,57 @@ export const steps = [
 ];
 
 export const programs = [
-    {
-        icon: Code2,
-        title: "Foundation Programming",
-        level: "Beginner",
-        topics: [
-            "Programming fundamentals",
-            "Git workflows",
-            "Problem solving",
-        ],
-        color: "#1E3A8A",
-        duration: "4 months",
-    },
-    {
-        icon: Globe,
-        title: "Web Development",
-        level: "Intermediate",
-        topics: ["Frontend frameworks", "Backend APIs", "Deployment"],
-        color: "#F97316",
-        duration: "4 months",
-        featured: true,
-    },
-    {
-        icon: TestTube2,
-        title: "Automation Testing & Quality Assurance",
-        level: "Intermediate",
-        topics: [
-            "Automation frameworks",
-            "CI/CD pipelines",
-            "Quality engineering",
-        ],
-        color: "#1E3A8A",
-        duration: "1 months",
-    },
-    {
-        icon: Briefcase,
-        title: "Industry Project Experience",
-        level: "Advanced",
-        topics: [
-            "Real project collaboration",
-            "Agile workflows",
-            "Engineering practices",
-        ],
-        color: "#F97316",
-        duration: "4 months",
-    },
+  {
+    icon: Code2,
+    title: "Foundation Skill Development",
+    level: "Beginner",
+    duration: "3 Months",
+    topics: [
+      "HTML, CSS, JavaScript",
+      "Python + OOPs",
+      "Git & Deployment",
+    ],
+    description:
+      "Complete beginner roadmap from zero to real-world development & testing.",
+    color: "#1E3A8A",
+    price: "₹4999",
+    originalPrice: "₹9999",
+    featured: true,
+    enrollUrl: "https://forms.gle/8Si6GePwSBYGepg27",
+  },
+  {
+    icon: Code2,
+    title: "Python Programming",
+    level: "Beginner",
+    duration: "2 Months",
+    topics: [
+      "Core Python",
+      "Data Structures",
+      "OOPs Concepts",
+    ],
+    description:
+      "Build strong logic & coding fundamentals with Python and real examples.",
+    color: "#F97316",
+    price: "₹2999",
+    originalPrice: "₹5999",
+    enrollUrl: "https://forms.gle/cBhjDimrHXCBXNa8A",
+  },
+  {
+    icon: Globe,
+    title: "Java Programming",
+    level: "Beginner",
+    duration: "2 Months",
+    topics: [
+      "Java Basics",
+      "OOPs Concepts",
+      "Problem Solving",
+    ],
+    description:
+      "Master Java fundamentals and object-oriented programming for backend roles.",
+    color: "#1E3A8A",
+    price: "₹2999",
+    originalPrice: "₹5999",
+  },
 ];
 
 export const pillars = [
