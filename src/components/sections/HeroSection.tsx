@@ -227,9 +227,7 @@ export function HeroSection() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
       >
         <ChevronRight size={20} className="text-[#94A3B8] rotate-90"/>
       </motion.div>
